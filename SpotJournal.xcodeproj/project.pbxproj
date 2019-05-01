@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		3A15CA7B2276EA70006A0843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CA7A2276EA70006A0843 /* AppDelegate.swift */; };
-		3A15CA7D2276EA70006A0843 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CA7C2276EA70006A0843 /* ViewController.swift */; };
 		3A15CA802276EA70006A0843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A15CA7E2276EA70006A0843 /* Main.storyboard */; };
 		3A15CA822276EA71006A0843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A15CA812276EA71006A0843 /* Assets.xcassets */; };
 		3A15CA852276EA71006A0843 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A15CA832276EA71006A0843 /* LaunchScreen.storyboard */; };
+		3A15CA8D2276F46F006A0843 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CA8C2276F46F006A0843 /* MainTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A15CA772276EA70006A0843 /* SpotJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A15CA7A2276EA70006A0843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3A15CA7C2276EA70006A0843 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A15CA7F2276EA70006A0843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A15CA812276EA71006A0843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A15CA842276EA71006A0843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A15CA862276EA71006A0843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A15CA8C2276F46F006A0843 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				3A15CA7A2276EA70006A0843 /* AppDelegate.swift */,
-				3A15CA7C2276EA70006A0843 /* ViewController.swift */,
+				3A15CA8C2276F46F006A0843 /* MainTableViewController.swift */,
 				3A15CA7E2276EA70006A0843 /* Main.storyboard */,
 				3A15CA812276EA71006A0843 /* Assets.xcassets */,
 				3A15CA832276EA71006A0843 /* LaunchScreen.storyboard */,
@@ -135,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A15CA7D2276EA70006A0843 /* ViewController.swift in Sources */,
+				3A15CA8D2276F46F006A0843 /* MainTableViewController.swift in Sources */,
 				3A15CA7B2276EA70006A0843 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9NN94ZU74L;
 				INFOPLIST_FILE = SpotJournal/Info.plist;
@@ -292,7 +293,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Siauruk.SpotJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -300,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9NN94ZU74L;
 				INFOPLIST_FILE = SpotJournal/Info.plist;
@@ -310,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Siauruk.SpotJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

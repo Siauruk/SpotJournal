@@ -9,7 +9,10 @@
 import UIKit
 
 class NewSpotViewController: UITableViewController {
-
+    
+    
+    @IBOutlet weak var imageOfSpot: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,15 +62,23 @@ extension NewSpotViewController: UITextFieldDelegate {
 
 // Mark: Work with image
 
-extension NewSpotViewController {
+extension NewSpotViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private func chooseImagePicker(source: UIImagePickerController.SourceType) {
         
         if UIImagePickerController.isSourceTypeAvailable(source) {
             let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
             imagePicker.allowsEditing = true
             imagePicker.sourceType = source
             present(imagePicker, animated: true)
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageOfSpot.image = info[.editedImage] as? UIImage
+        imageOfSpot.contentMode = .scaleAspectFit
+        imageOfSpot.clipsToBounds = true
+        dismiss(animated: true)
     }
 }

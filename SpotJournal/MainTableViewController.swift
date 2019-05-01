@@ -30,9 +30,9 @@ class MainTableViewController: UITableViewController {
         cell.nameLabel?.text = spots[indexPath.row].name
         cell.locationLabel.text = spots[indexPath.row].location
         cell.typeLabel.text = spots[indexPath.row].type
-        cell.imageOfPlace?.image = UIImage(named: spots[indexPath.row].image)
-        cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
-        cell.imageOfPlace?.clipsToBounds = true
+        cell.imageOfSpot?.image = UIImage(named: spots[indexPath.row].image)
+        cell.imageOfSpot?.layer.cornerRadius = cell.imageOfSpot.frame.size.height / 2
+        cell.imageOfSpot?.clipsToBounds = true
 
         return cell
     }

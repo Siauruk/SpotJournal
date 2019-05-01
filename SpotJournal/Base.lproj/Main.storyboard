@@ -75,7 +75,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageOfPlace" destination="tNm-Jp-nsE" id="lUV-sx-rbZ"/>
+                                    <outlet property="imageOfSpot" destination="tNm-Jp-nsE" id="qiP-1w-GwR"/>
                                     <outlet property="locationLabel" destination="zl5-rf-I45" id="dvW-y9-NxW"/>
                                     <outlet property="nameLabel" destination="bIL-0m-VDb" id="YTB-eA-sQk"/>
                                     <outlet property="typeLabel" destination="GlG-fc-5hb" id="grV-bP-TVZ"/>
@@ -256,6 +256,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="liR-1k-3qq"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageOfSpot" destination="Aof-G1-sZB" id="xCT-kr-TxP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bY-nU-le1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="f9B-tm-3Wt" userLabel="Exit" sceneMemberID="exit"/>

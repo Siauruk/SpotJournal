@@ -13,6 +13,7 @@
 		3A15CA852276EA71006A0843 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A15CA832276EA71006A0843 /* LaunchScreen.storyboard */; };
 		3A15CA8D2276F46F006A0843 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CA8C2276F46F006A0843 /* MainTableViewController.swift */; };
 		3A15CAAF22799D82006A0843 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CAAE22799D82006A0843 /* CustomTableViewCell.swift */; };
+		3A15CAB32279A415006A0843 /* SpotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CAB22279A415006A0843 /* SpotModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3A15CA862276EA71006A0843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A15CA8C2276F46F006A0843 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		3A15CAAE22799D82006A0843 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		3A15CAB22279A415006A0843 /* SpotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				3A15CA7A2276EA70006A0843 /* AppDelegate.swift */,
 				3A15CA8C2276F46F006A0843 /* MainTableViewController.swift */,
+				3A15CAB22279A415006A0843 /* SpotModel.swift */,
 				3A15CAAE22799D82006A0843 /* CustomTableViewCell.swift */,
 				3A15CA7E2276EA70006A0843 /* Main.storyboard */,
 				3A15CA812276EA71006A0843 /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A15CAAF22799D82006A0843 /* CustomTableViewCell.swift in Sources */,
+				3A15CAB32279A415006A0843 /* SpotModel.swift in Sources */,
 				3A15CA8D2276F46F006A0843 /* MainTableViewController.swift in Sources */,
 				3A15CA7B2276EA70006A0843 /* AppDelegate.swift in Sources */,
 			);

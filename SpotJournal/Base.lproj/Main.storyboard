@@ -37,12 +37,12 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="7e7-EU-2Ks"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zl5-rf-I45">
-                                            <rect key="frame" x="95" y="35" width="264" height="21"/>
+                                            <rect key="frame" x="95" y="33" width="264" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="nku-DR-TaX"/>
                                             </constraints>
@@ -66,7 +66,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="zl5-rf-I45" secondAttribute="trailing" constant="35" id="AWk-bS-CzK"/>
                                         <constraint firstAttribute="trailing" secondItem="GlG-fc-5hb" secondAttribute="trailing" constant="16" id="Arj-hY-oeZ"/>
                                         <constraint firstAttribute="trailing" secondItem="bIL-0m-VDb" secondAttribute="trailing" constant="55" id="Nqg-CN-jZ1"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="zl5-rf-I45" secondAttribute="bottom" constant="18" id="Vsh-dw-LRZ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="zl5-rf-I45" secondAttribute="bottom" constant="20" id="Vsh-dw-LRZ"/>
                                         <constraint firstItem="GlG-fc-5hb" firstAttribute="top" secondItem="bIL-0m-VDb" secondAttribute="bottom" constant="24" id="YRH-mR-qzn"/>
                                         <constraint firstItem="tNm-Jp-nsE" firstAttribute="centerY" secondItem="KyE-c7-U24" secondAttribute="centerY" id="aaD-HV-nKU"/>
                                         <constraint firstItem="zl5-rf-I45" firstAttribute="leading" secondItem="tNm-Jp-nsE" secondAttribute="trailing" constant="15" id="cyE-eS-if1"/>

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Table View Controller-->
+        <!--Spot Journal-->
         <scene sceneID="r7Z-fe-tYn">
             <objects>
                 <tableViewController id="IJb-OO-329" customClass="MainTableViewController" customModule="SpotJournal" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="IJb-OO-329" id="1Ly-zt-Xaw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Main Table View Controller" id="dZF-ol-til"/>
+                    <navigationItem key="navigationItem" title="Spot Journal" id="dZF-ol-til"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEL-Jm-ZmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,6 +46,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JXD-e3-KEE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="24"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -13,18 +13,73 @@
         <scene sceneID="r7Z-fe-tYn">
             <objects>
                 <tableViewController id="IJb-OO-329" customClass="MainTableViewController" customModule="SpotJournal" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OTe-ap-wc9">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OTe-ap-wc9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="zk6-j5-h9S">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="zk6-j5-h9S" customClass="CustomTableViewCell" customModule="SpotJournal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zk6-j5-h9S" id="KyE-c7-U24">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="84.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tNm-Jp-nsE">
+                                            <rect key="frame" x="15" y="10" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="65" id="9tw-LO-5zw"/>
+                                                <constraint firstAttribute="width" constant="65" id="aG8-fN-iMR"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIL-0m-VDb">
+                                            <rect key="frame" x="95" y="9" width="264" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="7e7-EU-2Ks"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zl5-rf-I45">
+                                            <rect key="frame" x="95" y="35" width="264" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="nku-DR-TaX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlG-fc-5hb">
+                                            <rect key="frame" x="95" y="54" width="303" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="qGf-ho-jY5"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bIL-0m-VDb" firstAttribute="top" secondItem="KyE-c7-U24" secondAttribute="top" constant="9" id="1G7-cs-7AN"/>
+                                        <constraint firstItem="bIL-0m-VDb" firstAttribute="leading" secondItem="tNm-Jp-nsE" secondAttribute="trailing" constant="15" id="24I-K6-mc8"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zl5-rf-I45" secondAttribute="trailing" constant="35" id="AWk-bS-CzK"/>
+                                        <constraint firstAttribute="trailing" secondItem="GlG-fc-5hb" secondAttribute="trailing" constant="16" id="Arj-hY-oeZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="bIL-0m-VDb" secondAttribute="trailing" constant="55" id="Nqg-CN-jZ1"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="zl5-rf-I45" secondAttribute="bottom" constant="18" id="Vsh-dw-LRZ"/>
+                                        <constraint firstItem="GlG-fc-5hb" firstAttribute="top" secondItem="bIL-0m-VDb" secondAttribute="bottom" constant="24" id="YRH-mR-qzn"/>
+                                        <constraint firstItem="tNm-Jp-nsE" firstAttribute="centerY" secondItem="KyE-c7-U24" secondAttribute="centerY" id="aaD-HV-nKU"/>
+                                        <constraint firstItem="zl5-rf-I45" firstAttribute="leading" secondItem="tNm-Jp-nsE" secondAttribute="trailing" constant="15" id="cyE-eS-if1"/>
+                                        <constraint firstItem="GlG-fc-5hb" firstAttribute="leading" secondItem="tNm-Jp-nsE" secondAttribute="trailing" constant="15" id="lzb-c5-b1Z"/>
+                                        <constraint firstItem="tNm-Jp-nsE" firstAttribute="leading" secondItem="KyE-c7-U24" secondAttribute="leading" constant="15" id="yaJ-Z9-CaF"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageOfPlace" destination="tNm-Jp-nsE" id="lUV-sx-rbZ"/>
+                                    <outlet property="locationLabel" destination="zl5-rf-I45" id="dvW-y9-NxW"/>
+                                    <outlet property="nameLabel" destination="bIL-0m-VDb" id="YTB-eA-sQk"/>
+                                    <outlet property="typeLabel" destination="GlG-fc-5hb" id="grV-bP-TVZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -36,7 +91,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEL-Jm-ZmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1184.0579710144928" y="108.48214285714285"/>
+            <point key="canvasLocation" x="1182.608695652174" y="108.48214285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R52-tU-PJ7">
@@ -47,7 +102,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="24"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

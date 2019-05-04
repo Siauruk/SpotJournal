@@ -148,7 +148,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Place name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kus-Q3-yL7">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Spot name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kus-Q3-yL7">
                                                             <rect key="frame" x="0.0" y="37" width="382" height="25.5"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -184,7 +184,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Place location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-39-7IH">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Spot location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-39-7IH">
                                                             <rect key="frame" x="0.0" y="37" width="382" height="25.5"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -220,7 +220,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Place type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qZW-Ml-aBq">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Spot type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qZW-Ml-aBq">
                                                             <rect key="frame" x="0.0" y="38" width="382" height="24.5"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -251,13 +251,21 @@
                     <navigationItem key="navigationItem" title="New Spot" id="VxF-ny-okr">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nJX-JT-gCz">
                             <connections>
-                                <segue destination="f9B-tm-3Wt" kind="unwind" unwindAction="cancelAction:" id="NVP-uw-yeF"/>
+                                <action selector="cancelAction:" destination="ezp-l4-9sr" id="UEA-WU-cOP"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="liR-1k-3qq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="liR-1k-3qq">
+                            <connections>
+                                <segue destination="f9B-tm-3Wt" kind="unwind" unwindAction="unwindSegue:" id="Ps2-AY-HEm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageOfSpot" destination="Aof-G1-sZB" id="xCT-kr-TxP"/>
+                        <outlet property="saveButton" destination="liR-1k-3qq" id="FBu-61-DYG"/>
+                        <outlet property="spotImage" destination="Aof-G1-sZB" id="xCT-kr-TxP"/>
+                        <outlet property="spotLocation" destination="Fea-39-7IH" id="pd6-hN-Qvf"/>
+                        <outlet property="spotName" destination="kus-Q3-yL7" id="VvA-Kr-6m6"/>
+                        <outlet property="spotType" destination="qZW-Ml-aBq" id="ZnU-9B-E6j"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bY-nU-le1" userLabel="First Responder" sceneMemberID="firstResponder"/>

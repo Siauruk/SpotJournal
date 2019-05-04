@@ -6,16 +6,17 @@
 //  Copyright © 2019 Anton Siauruk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Spot {
     
     var name: String
-    var location: String
-    var type: String
-    var image: String
+    var location: String?
+    var type: String?
+    var image: UIImage?
+    var spotImage: String?
     
-    static let tempRestaurantNames = [
+    static let tempSpotNames = [
         "Katz’s Delicatessen", "Peter Luger", "Lombardi’s",
         "Keens Steakhouse", "Junior’s Restaurant", "Tavern on the Green",
         "The Rainbow Room", "Totonno's", "The Russian Tea Room",
@@ -28,10 +29,12 @@ struct Spot {
         
         var spots = [Spot]()
         
-        for spot in tempRestaurantNames {
-            spots.append(Spot(name: spot, location: "New York", type: "Restaurant", image: spot))
+        for spot in tempSpotNames {
+            spots.append(Spot(name: spot, location: "New York", type: "Restaurant", image: nil, spotImage: spot))
         }
         
         return spots
     }
 }
+
+

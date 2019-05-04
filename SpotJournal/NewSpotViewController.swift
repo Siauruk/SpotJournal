@@ -10,13 +10,25 @@ import UIKit
 
 class NewSpotViewController: UITableViewController {
     
+    var newSpot: Spot?
+    var imageIsChanged = false
     
-    @IBOutlet weak var imageOfSpot: UIImageView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    @IBOutlet weak var spotImage: UIImageView!
+    @IBOutlet weak var spotName: UITextField!
+    @IBOutlet weak var spotLocation: UITextField!
+    @IBOutlet weak var spotType: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
+        
+        saveButton.isEnabled = false
+        
+        spotName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
     // MARK: Table view delegate
@@ -55,6 +67,24 @@ class NewSpotViewController: UITableViewController {
         }
     }
     
+    func saveNewSpot() {
+        
+        var image: UIImage?
+        
+        if imageIsChanged {
+            image = spotImage.image
+        } else {
+            image = #imageLiteral(resourceName: "imagePlaceholder")
+        }
+        
+        newSpot = Spot(name: spotName.text!, location: spotLocation.text, type: spotType.text, image: image, spotImage: nil)
+    }
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 }
 
@@ -66,6 +96,15 @@ extension NewSpotViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    @objc private func textFieldChanged() {
+        
+        if spotName.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
     }
 }
 
@@ -86,9 +125,12 @@ extension NewSpotViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imageOfSpot.image = info[.editedImage] as? UIImage
-        imageOfSpot.contentMode = .scaleAspectFit
-        imageOfSpot.clipsToBounds = true
+        spotImage.image = info[.editedImage] as? UIImage
+        spotImage.contentMode = .scaleAspectFit
+        spotImage.clipsToBounds = true
+        
+        imageIsChanged = true
+        
         dismiss(animated: true)
     }
 }

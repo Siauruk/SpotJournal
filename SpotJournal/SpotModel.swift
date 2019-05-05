@@ -6,17 +6,16 @@
 //  Copyright © 2019 Anton Siauruk. All rights reserved.
 //
 
-import UIKit
+import RealmSwift
 
-struct Spot {
+class Spot: Object {
     
-    var name: String
-    var location: String?
-    var type: String?
-    var image: UIImage?
-    var spotImage: String?
+    @objc dynamic var name: String = ""
+    @objc dynamic var location: String?
+    @objc dynamic var type: String?
+    @objc dynamic var imageData: Data?
     
-    static let tempSpotNames = [
+    let tempSpotNames = [
         "Katz’s Delicatessen", "Peter Luger", "Lombardi’s",
         "Keens Steakhouse", "Junior’s Restaurant", "Tavern on the Green",
         "The Rainbow Room", "Totonno's", "The Russian Tea Room",
@@ -25,16 +24,24 @@ struct Spot {
         "21 Club", "John’s Pizzeria"
     ]
     
-    static func getSpots() -> [Spot] {
-        
-        var spots = [Spot]()
-        
+    func saveSpots() {
+
         for spot in tempSpotNames {
-            spots.append(Spot(name: spot, location: "New York", type: "Restaurant", image: nil, spotImage: spot))
+            
+            let image = UIImage(named: spot)
+            guard let imageData = image?.pngData() else { return }
+            
+            let newSpot = Spot()
+            
+            newSpot.name = spot
+            newSpot.location = "New York"
+            newSpot.type = "Restaurant"
+            newSpot.imageData = imageData
+            
+            StorageManager.saveObject(newSpot)
         }
-        
-        return spots
     }
+    
 }
 
 

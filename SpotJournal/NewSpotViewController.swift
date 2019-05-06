@@ -10,7 +10,6 @@ import UIKit
 
 class NewSpotViewController: UITableViewController {
     
-    var newSpot = Spot()
     var imageIsChanged = false
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -24,15 +23,8 @@ class NewSpotViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.async {
-            self.newSpot.saveSpots()
-        }
-        
-        
         tableView.tableFooterView = UIView()
-        
         saveButton.isEnabled = false
-        
         spotName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
@@ -82,11 +74,14 @@ class NewSpotViewController: UITableViewController {
             image = #imageLiteral(resourceName: "imagePlaceholder")
         }
         
-//        newSpot = Spot(name: spotName.text!, location: spotLocation.text, type: spotType.text, image: image, spotImage: nil)
+        let imageData = image?.pngData()
+        
+        let newSpot = Spot(name: spotName.text!, location: spotLocation.text, type: spotType.text, imageData: imageData)
+        
+        StorageManager.saveObject(newSpot)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        
         dismiss(animated: true, completion: nil)
     }
     

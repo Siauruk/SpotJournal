@@ -42,6 +42,20 @@ class MainTableViewController: UITableViewController {
         return cell
     }
     
+    // MARK: Table view delegate
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let spot = spots[indexPath.row]
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
+            
+            StorageManager.deleteObject(spot)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        return [deleteAction]
+    }
+    
+    
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         
         guard let newSpotVC = segue.source as? NewSpotViewController else { return }

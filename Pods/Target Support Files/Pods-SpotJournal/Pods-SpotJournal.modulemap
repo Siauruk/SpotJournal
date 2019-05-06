@@ -1,0 +1,6 @@
+framework module Pods_SpotJournal {
+  umbrella header "Pods-SpotJournal-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -15,6 +15,8 @@
 		3A15CAAF22799D82006A0843 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CAAE22799D82006A0843 /* CustomTableViewCell.swift */; };
 		3A15CAB32279A415006A0843 /* SpotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CAB22279A415006A0843 /* SpotModel.swift */; };
 		3A15CAB52279BFEB006A0843 /* NewSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CAB42279BFEB006A0843 /* NewSpotViewController.swift */; };
+		3A5EA6CB227FA1D600F067D6 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5EA6CA227FA1D600F067D6 /* StorageManager.swift */; };
+		60E444C3E11F86C1DD721698 /* Pods_SpotJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0DD8DC5F0305206A461EB4 /* Pods_SpotJournal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		3A15CAAE22799D82006A0843 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3A15CAB22279A415006A0843 /* SpotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotModel.swift; sourceTree = "<group>"; };
 		3A15CAB42279BFEB006A0843 /* NewSpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSpotViewController.swift; sourceTree = "<group>"; };
+		3A5EA6CA227FA1D600F067D6 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		3CA103113842BFF6F25126F4 /* Pods-SpotJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotJournal.release.xcconfig"; path = "Target Support Files/Pods-SpotJournal/Pods-SpotJournal.release.xcconfig"; sourceTree = "<group>"; };
+		71096DC5E67D76E46B1D3977 /* Pods-SpotJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotJournal.debug.xcconfig"; path = "Target Support Files/Pods-SpotJournal/Pods-SpotJournal.debug.xcconfig"; sourceTree = "<group>"; };
+		7F0DD8DC5F0305206A461EB4 /* Pods_SpotJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60E444C3E11F86C1DD721698 /* Pods_SpotJournal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0773368C4578234CAC8DF2B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71096DC5E67D76E46B1D3977 /* Pods-SpotJournal.debug.xcconfig */,
+				3CA103113842BFF6F25126F4 /* Pods-SpotJournal.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3A15CA6E2276EA70006A0843 = {
 			isa = PBXGroup;
 			children = (
 				3A15CA792276EA70006A0843 /* SpotJournal */,
 				3A15CA782276EA70006A0843 /* Products */,
+				0773368C4578234CAC8DF2B4 /* Pods */,
+				B68FC322A68ECA67815A866F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				3A15CA7A2276EA70006A0843 /* AppDelegate.swift */,
+				3A5EA6CA227FA1D600F067D6 /* StorageManager.swift */,
 				3A15CA8C2276F46F006A0843 /* MainTableViewController.swift */,
 				3A15CAB42279BFEB006A0843 /* NewSpotViewController.swift */,
 				3A15CAB22279A415006A0843 /* SpotModel.swift */,
@@ -73,6 +92,14 @@
 			path = SpotJournal;
 			sourceTree = "<group>";
 		};
+		B68FC322A68ECA67815A866F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F0DD8DC5F0305206A461EB4 /* Pods_SpotJournal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A15CA892276EA71006A0843 /* Build configuration list for PBXNativeTarget "SpotJournal" */;
 			buildPhases = (
+				1BC76515474A9D6C482EA09E /* [CP] Check Pods Manifest.lock */,
 				3A15CA732276EA70006A0843 /* Sources */,
 				3A15CA742276EA70006A0843 /* Frameworks */,
 				3A15CA752276EA70006A0843 /* Resources */,
+				3D28A1B34F20184902052A3C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,6 +168,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1BC76515474A9D6C482EA09E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpotJournal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D28A1B34F20184902052A3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpotJournal/Pods-SpotJournal-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpotJournal/Pods-SpotJournal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3A15CA732276EA70006A0843 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -147,6 +225,7 @@
 				3A15CAAF22799D82006A0843 /* CustomTableViewCell.swift in Sources */,
 				3A15CAB52279BFEB006A0843 /* NewSpotViewController.swift in Sources */,
 				3A15CAB32279A415006A0843 /* SpotModel.swift in Sources */,
+				3A5EA6CB227FA1D600F067D6 /* StorageManager.swift in Sources */,
 				3A15CA8D2276F46F006A0843 /* MainTableViewController.swift in Sources */,
 				3A15CA7B2276EA70006A0843 /* AppDelegate.swift in Sources */,
 			);
@@ -292,6 +371,7 @@
 		};
 		3A15CA8A2276EA71006A0843 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71096DC5E67D76E46B1D3977 /* Pods-SpotJournal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -311,6 +391,7 @@
 		};
 		3A15CA8B2276EA71006A0843 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CA103113842BFF6F25126F4 /* Pods-SpotJournal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

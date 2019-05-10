@@ -19,8 +19,9 @@ class MainTableViewController: UITableViewController {
         spots = realm.objects(Spot.self)
     }
 
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return spots.isEmpty ? 0 : spots.count
     }
@@ -42,9 +43,10 @@ class MainTableViewController: UITableViewController {
         return cell
     }
     
+    
     // MARK: Table view delegate
+    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
         let spot = spots[indexPath.row]
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
             
@@ -56,11 +58,21 @@ class MainTableViewController: UITableViewController {
     }
     
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let spot = spots[indexPath.row]
+            let newSpotVC = segue.destination as! NewSpotViewController
+            newSpotVC.currentSpot = spot
+        }
+    }
+    
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
-        
         guard let newSpotVC = segue.source as? NewSpotViewController else { return }
         
-        newSpotVC.saveNewSpot()
+        newSpotVC.saveSpot()
         tableView.reloadData()
     }
 }

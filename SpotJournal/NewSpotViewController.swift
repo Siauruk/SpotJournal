@@ -10,6 +10,7 @@ import UIKit
 
 class NewSpotViewController: UITableViewController {
     
+    var currentSpot: Spot?
     var imageIsChanged = false
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -26,11 +27,13 @@ class NewSpotViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
         spotName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        setupEditScreen()
     }
     
+    
     // MARK: Table view delegate
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if indexPath.row == 0 {
             
             let cameraIcon = #imageLiteral(resourceName: "camera")
@@ -64,8 +67,7 @@ class NewSpotViewController: UITableViewController {
         }
     }
     
-    func saveNewSpot() {
-        
+    func saveSpot() {
         var image: UIImage?
         
         if imageIsChanged {
@@ -78,7 +80,41 @@ class NewSpotViewController: UITableViewController {
         
         let newSpot = Spot(name: spotName.text!, location: spotLocation.text, type: spotType.text, imageData: imageData)
         
-        StorageManager.saveObject(newSpot)
+        if currentSpot != nil {
+            try! realm.write {
+                currentSpot?.name = newSpot.name
+                currentSpot?.location = newSpot.location
+                currentSpot?.type = newSpot.type
+                currentSpot?.imageData = newSpot.imageData
+            }
+        } else {
+           StorageManager.saveObject(newSpot)
+        }
+    }
+    
+    private func setupEditScreen() {
+        if currentSpot != nil {
+            
+            setupNavigationBar()
+            imageIsChanged = true
+            
+            guard let data = currentSpot?.imageData, let image = UIImage(data: data) else { return }
+            
+            spotImage.image = image
+            spotImage.contentMode = .scaleAspectFill
+            spotName.text = currentSpot?.name
+            spotLocation.text = currentSpot?.location
+            spotType.text = currentSpot?.type
+        }
+    }
+    
+    private func setupNavigationBar() {
+        if let topItem = navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
+        navigationItem.leftBarButtonItem = nil
+        title = currentSpot?.name
+        saveButton.isEnabled = true
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -99,7 +135,6 @@ extension NewSpotViewController: UITextFieldDelegate {
     }
     
     @objc private func textFieldChanged() {
-        
         if spotName.text?.isEmpty == false {
             saveButton.isEnabled = true
         } else {
@@ -114,7 +149,6 @@ extension NewSpotViewController: UITextFieldDelegate {
 extension NewSpotViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private func chooseImagePicker(source: UIImagePickerController.SourceType) {
-        
         if UIImagePickerController.isSourceTypeAvailable(source) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self

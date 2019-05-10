@@ -79,6 +79,7 @@
                                     <outlet property="locationLabel" destination="zl5-rf-I45" id="dvW-y9-NxW"/>
                                     <outlet property="nameLabel" destination="bIL-0m-VDb" id="YTB-eA-sQk"/>
                                     <outlet property="typeLabel" destination="GlG-fc-5hb" id="grV-bP-TVZ"/>
+                                    <segue destination="ezp-l4-9sr" kind="show" identifier="showDetail" id="s8r-ss-bJC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -87,7 +88,7 @@
                             <outlet property="delegate" destination="IJb-OO-329" id="1Ly-zt-Xaw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Spot Journal" id="dZF-ol-til">
+                    <navigationItem key="navigationItem" title="Spot Journal" largeTitleDisplayMode="never" id="dZF-ol-til">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="iyH-mp-dhv">
                             <connections>
                                 <segue destination="OFu-8g-h8A" kind="presentation" modalTransitionStyle="flipHorizontal" id="eys-ef-xfy"/>
@@ -248,7 +249,7 @@
                             <outlet property="delegate" destination="ezp-l4-9sr" id="AiD-Cy-eUg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Spot" id="VxF-ny-okr">
+                    <navigationItem key="navigationItem" title="New Spot" largeTitleDisplayMode="always" id="VxF-ny-okr">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nJX-JT-gCz">
                             <connections>
                                 <action selector="cancelAction:" destination="ezp-l4-9sr" id="UEA-WU-cOP"/>
@@ -271,15 +272,15 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bY-nU-le1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="f9B-tm-3Wt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2889.8550724637685" y="107.8125"/>
+            <point key="canvasLocation" x="2064" y="108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R52-tU-PJ7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4TY-gy-lQG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JXD-e3-KEE">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="JXD-e3-KEE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
@@ -310,10 +311,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSn-xe-GB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1997" y="108"/>
+            <point key="canvasLocation" x="2064" y="-639"/>
         </scene>
     </scenes>
     <resources>
         <image name="Photo" width="195" height="196"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jgx-rV-dwL"/>
+    </inferredMetricsTieBreakers>
 </document>

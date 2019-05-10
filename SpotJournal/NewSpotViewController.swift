@@ -15,10 +15,10 @@ class NewSpotViewController: UITableViewController {
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    @IBOutlet weak var spotImage: UIImageView!
-    @IBOutlet weak var spotName: UITextField!
-    @IBOutlet weak var spotLocation: UITextField!
-    @IBOutlet weak var spotType: UITextField!
+    @IBOutlet var spotImage: UIImageView!
+    @IBOutlet var spotName: UITextField!
+    @IBOutlet var spotLocation: UITextField!
+    @IBOutlet var spotType: UITextField!
     
     
     override func viewDidLoad() {

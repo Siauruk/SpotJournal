@@ -101,7 +101,7 @@ class NewSpotViewController: UITableViewController {
             guard let data = currentSpot?.imageData, let image = UIImage(data: data) else { return }
             
             spotImage.image = image
-            spotImage.contentMode = .scaleAspectFill
+            spotImage.contentMode = .scaleAspectFit
             spotName.text = currentSpot?.name
             spotLocation.text = currentSpot?.location
             spotType.text = currentSpot?.type

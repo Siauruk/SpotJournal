@@ -1,5 +1,5 @@
 //
-//  MainTableViewController.swift
+//  MainViewController.swift
 //  SpotJournal
 //
 //  Created by Anton Siauruk on 4/29/19.
@@ -9,7 +9,9 @@
 import UIKit
 import RealmSwift
 
-class MainTableViewController: UITableViewController {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet var tableView: UITableView!
     
     var spots: Results<Spot>!
 
@@ -19,14 +21,15 @@ class MainTableViewController: UITableViewController {
         spots = realm.objects(Spot.self)
     }
 
+    
     // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return spots.isEmpty ? 0 : spots.count
     }
     
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
         let spot = spots[indexPath.row]
@@ -42,11 +45,36 @@ class MainTableViewController: UITableViewController {
         return cell
     }
     
-    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+    
+    // MARK: Table view delegate
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let spot = spots[indexPath.row]
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
+            
+            StorageManager.deleteObject(spot)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
         
+        return [deleteAction]
+    }
+    
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let spot = spots[indexPath.row]
+            let newSpotVC = segue.destination as! NewSpotViewController
+            newSpotVC.currentSpot = spot
+        }
+    }
+    
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         guard let newSpotVC = segue.source as? NewSpotViewController else { return }
         
-        newSpotVC.saveNewSpot()
+        newSpotVC.saveSpot()
         tableView.reloadData()
     }
 }

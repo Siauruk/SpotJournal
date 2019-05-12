@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="Aof-G1-sZB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="249.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="249.50000000000006"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                             </subviews>
@@ -189,6 +189,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ratingControl" destination="JPF-kX-yJf" id="Iu3-Pt-dVI"/>
                         <outlet property="saveButton" destination="liR-1k-3qq" id="FBu-61-DYG"/>
                         <outlet property="spotImage" destination="Aof-G1-sZB" id="xCT-kr-TxP"/>
                         <outlet property="spotLocation" destination="Fea-39-7IH" id="pd6-hN-Qvf"/>

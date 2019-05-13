@@ -18,6 +18,7 @@
 		3A4EB82C2288174200F58036 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EB82B2288174200F58036 /* RatingControl.swift */; };
 		3A5EA6CB227FA1D600F067D6 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5EA6CA227FA1D600F067D6 /* StorageManager.swift */; };
 		3A9124EB22888E2500134EE3 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9124EA22888E2500134EE3 /* RatingView.swift */; };
+		3A9B142A2289600700A19FCA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B14292289600700A19FCA /* MapViewController.swift */; };
 		60E444C3E11F86C1DD721698 /* Pods_SpotJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0DD8DC5F0305206A461EB4 /* Pods_SpotJournal.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		3A4EB82B2288174200F58036 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		3A5EA6CA227FA1D600F067D6 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		3A9124EA22888E2500134EE3 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		3A9B14292289600700A19FCA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3CA103113842BFF6F25126F4 /* Pods-SpotJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotJournal.release.xcconfig"; path = "Target Support Files/Pods-SpotJournal/Pods-SpotJournal.release.xcconfig"; sourceTree = "<group>"; };
 		71096DC5E67D76E46B1D3977 /* Pods-SpotJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotJournal.debug.xcconfig"; path = "Target Support Files/Pods-SpotJournal/Pods-SpotJournal.debug.xcconfig"; sourceTree = "<group>"; };
 		7F0DD8DC5F0305206A461EB4 /* Pods_SpotJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,9 +86,10 @@
 			children = (
 				3A15CA7A2276EA70006A0843 /* AppDelegate.swift */,
 				3A5EA6CA227FA1D600F067D6 /* StorageManager.swift */,
+				3A15CAB22279A415006A0843 /* SpotModel.swift */,
 				3A15CA8C2276F46F006A0843 /* MainTableViewController.swift */,
 				3A15CAB42279BFEB006A0843 /* NewSpotViewController.swift */,
-				3A15CAB22279A415006A0843 /* SpotModel.swift */,
+				3A9B14292289600700A19FCA /* MapViewController.swift */,
 				3A15CAAE22799D82006A0843 /* CustomTableViewCell.swift */,
 				3A4EB82B2288174200F58036 /* RatingControl.swift */,
 				3A9124EA22888E2500134EE3 /* RatingView.swift */,
@@ -232,6 +235,7 @@
 				3A15CAAF22799D82006A0843 /* CustomTableViewCell.swift in Sources */,
 				3A15CAB52279BFEB006A0843 /* NewSpotViewController.swift in Sources */,
 				3A9124EB22888E2500134EE3 /* RatingView.swift in Sources */,
+				3A9B142A2289600700A19FCA /* MapViewController.swift in Sources */,
 				3A15CAB32279A415006A0843 /* SpotModel.swift in Sources */,
 				3A5EA6CB227FA1D600F067D6 /* StorageManager.swift in Sources */,
 				3A15CA8D2276F46F006A0843 /* MainTableViewController.swift in Sources */,

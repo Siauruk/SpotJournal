@@ -10,9 +10,15 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var imageOfSpot: UIImageView!
+    @IBOutlet weak var imageOfSpot: UIImageView! {
+        didSet {
+            imageOfSpot?.layer.cornerRadius = imageOfSpot.frame.size.height / 2
+            imageOfSpot?.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet var ratingView: RatingView!
     
 }

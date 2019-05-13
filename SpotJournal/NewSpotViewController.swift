@@ -10,7 +10,7 @@ import UIKit
 
 class NewSpotViewController: UITableViewController {
     
-    var currentSpot: Spot?
+    var currentSpot: Spot!
     var imageIsChanged = false
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -19,12 +19,13 @@ class NewSpotViewController: UITableViewController {
     @IBOutlet var spotName: UITextField!
     @IBOutlet var spotLocation: UITextField!
     @IBOutlet var spotType: UITextField!
+    @IBOutlet var ratingControl: RatingControl!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1) )
         saveButton.isEnabled = false
         spotName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setupEditScreen()
@@ -78,7 +79,7 @@ class NewSpotViewController: UITableViewController {
         
         let imageData = image?.pngData()
         
-        let newSpot = Spot(name: spotName.text!, location: spotLocation.text, type: spotType.text, imageData: imageData)
+        let newSpot = Spot(name: spotName.text!, location: spotLocation.text, type: spotType.text, imageData: imageData, rating: Double(ratingControl.rating))
         
         if currentSpot != nil {
             try! realm.write {
@@ -86,6 +87,7 @@ class NewSpotViewController: UITableViewController {
                 currentSpot?.location = newSpot.location
                 currentSpot?.type = newSpot.type
                 currentSpot?.imageData = newSpot.imageData
+                currentSpot?.rating = newSpot.rating
             }
         } else {
            StorageManager.saveObject(newSpot)
@@ -105,6 +107,7 @@ class NewSpotViewController: UITableViewController {
             spotName.text = currentSpot?.name
             spotLocation.text = currentSpot?.location
             spotType.text = currentSpot?.type
+            ratingControl.rating = Int(currentSpot.rating)
         }
     }
     

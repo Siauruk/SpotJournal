@@ -27,7 +27,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet var tableView: UITableView!
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var reversedSortingButton: UIBarButtonItem!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +40,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
-
+    
     
     // MARK: - Table view data source
     
@@ -52,18 +52,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return spots.count
     }
     
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-
+        
         let spot = isFiltering ? filteredSpots[indexPath.row] : spots[indexPath.row]
-
+        
         cell.nameLabel?.text = spot.name
         cell.locationLabel.text = spot.location
         cell.typeLabel.text = spot.type
         cell.imageOfSpot.image = UIImage(data: spot.imageData!)
         cell.ratingView.rating = Int(spot.rating)
-
+        
         return cell
     }
     
@@ -89,14 +89,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            
-            let spot = isFiltering ? filteredSpots[indexPath.row] : spots[indexPath.row]
-            
-            let newSpotVC = segue.destination as! NewSpotViewController
-            newSpotVC.currentSpot = spot
-        }
+        guard segue.identifier == "showDetail" else { return }
+        
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let spot = isFiltering ? filteredSpots[indexPath.row] : spots[indexPath.row]
+        let newSpotVC = segue.destination as! NewSpotViewController
+        newSpotVC.currentSpot = spot
     }
     
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {

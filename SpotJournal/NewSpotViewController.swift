@@ -80,14 +80,7 @@ class NewSpotViewController: UITableViewController {
     }
     
     func saveSpot() {
-        var image: UIImage?
-        
-        if imageIsChanged {
-            image = spotImage.image
-        } else {
-            image = #imageLiteral(resourceName: "imagePlaceholder")
-        }
-        
+        let image = imageIsChanged ? spotImage.image : #imageLiteral(resourceName: "imagePlaceholder")
         let imageData = image?.pngData()
         
         let newSpot = Spot(name: spotName.text!, location: spotLocation.text, type: spotType.text, imageData: imageData, rating: Double(ratingControl.rating))

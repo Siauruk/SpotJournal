@@ -8,11 +8,13 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
     
     var spot = Spot()
     let annotationIdentifier = "annotationIdentifier"
+    let locationManager = CLLocationManager()
 
     @IBOutlet var mapView: MKMapView!
     
@@ -23,8 +25,20 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+
         mapView.delegate = self
         setupPlacemark()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        checkLocationServices()
+    }
+    
+    @objc func willEnterForeground() {
+        checkLocationServices()
     }
     
     private func setupPlacemark() {
@@ -52,6 +66,61 @@ class MapViewController: UIViewController {
             self.mapView.selectAnnotation(annotation, animated: true)
         }
     }
+    
+    private func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            showSimpleAlert(title: "Location Services Off", message: "Turn on Location Services in Settings > Privacy to allow Spot Journal to determinate your current location")
+        }
+    }
+    
+    private func setupLocationManager() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+    }
+    
+    private func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+        case .denied:
+            showSimpleAlert(title: "Your Location is not Available", message: "Turn on Location Services in Settings > SpotJournal to allow Spot Journal to determinate your current location")
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            print("New case is available")
+        }
+    }
+    
+    func showSimpleAlert(title: String, message: String?) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+                // If location settings are enabled then open location settings for the app
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
+                }
+        }
+        
+        alert.addAction(settingsAction)
+        alert.addAction(okAction)
+        
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 
@@ -77,5 +146,11 @@ extension MapViewController: MKMapViewDelegate {
         }
         
         return annotationView
+    }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
     }
 }

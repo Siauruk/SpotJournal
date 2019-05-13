@@ -33,6 +33,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         spots = realm.objects(Spot.self)
         
+        
         //Setup the search controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false

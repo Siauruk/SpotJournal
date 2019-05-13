@@ -266,7 +266,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YJf-Lh-HPE">
-                                <rect key="frame" x="0.0" y="88" width="375" height="29"/>
+                                <rect key="frame" x="15" y="93" width="345" height="29"/>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Name"/>
@@ -276,7 +276,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OMP-l1-fyf">
-                                <rect key="frame" x="0.0" y="117" width="375" height="695"/>
+                                <rect key="frame" x="0.0" y="122" width="375" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Qrw-sQ-byB" customClass="CustomTableViewCell" customModule="SpotJournal" customModuleProvider="target">
@@ -351,11 +351,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OMP-l1-fyf" firstAttribute="leading" secondItem="Beo-wA-RQy" secondAttribute="leading" id="5WI-F0-4iF"/>
-                            <constraint firstItem="YJf-Lh-HPE" firstAttribute="leading" secondItem="zKd-kf-dlf" secondAttribute="leading" id="Yi9-wG-kOz"/>
+                            <constraint firstItem="YJf-Lh-HPE" firstAttribute="leading" secondItem="zKd-kf-dlf" secondAttribute="leading" constant="15" id="Yi9-wG-kOz"/>
                             <constraint firstAttribute="bottom" secondItem="OMP-l1-fyf" secondAttribute="bottom" id="b5l-ZC-BfF"/>
-                            <constraint firstItem="zKd-kf-dlf" firstAttribute="trailing" secondItem="YJf-Lh-HPE" secondAttribute="trailing" id="cEW-YO-5n1"/>
+                            <constraint firstItem="zKd-kf-dlf" firstAttribute="trailing" secondItem="YJf-Lh-HPE" secondAttribute="trailing" constant="15" id="cEW-YO-5n1"/>
                             <constraint firstItem="OMP-l1-fyf" firstAttribute="top" secondItem="YJf-Lh-HPE" secondAttribute="bottom" constant="1" id="hce-gH-nCH"/>
-                            <constraint firstItem="YJf-Lh-HPE" firstAttribute="top" secondItem="zKd-kf-dlf" secondAttribute="top" id="hsT-Jg-jUh"/>
+                            <constraint firstItem="YJf-Lh-HPE" firstAttribute="top" secondItem="zKd-kf-dlf" secondAttribute="top" constant="5" id="hsT-Jg-jUh"/>
                             <constraint firstItem="zKd-kf-dlf" firstAttribute="trailing" secondItem="OMP-l1-fyf" secondAttribute="trailing" id="jlI-nw-omY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zKd-kf-dlf"/>
@@ -429,6 +429,6 @@
         <image name="map" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jgx-rV-dwL"/>
+        <segue reference="WEv-FM-yKt"/>
     </inferredMetricsTieBreakers>
 </document>

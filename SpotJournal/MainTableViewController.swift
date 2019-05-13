@@ -49,28 +49,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return filteredSpots.count
         }
         
-        return spots.isEmpty ? 0 : spots.count
+        return spots.count
     }
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        var spot = Spot()
-        
-        if isFiltering {
-            spot = filteredSpots[indexPath.row]
-        } else {
-            spot = spots[indexPath.row]
-        }
+        let spot = isFiltering ? filteredSpots[indexPath.row] : spots[indexPath.row]
 
         cell.nameLabel?.text = spot.name
         cell.locationLabel.text = spot.location
         cell.typeLabel.text = spot.type
         cell.imageOfSpot.image = UIImage(data: spot.imageData!)
-        
-        cell.imageOfSpot?.layer.cornerRadius = cell.imageOfSpot.frame.size.height / 2
-        cell.imageOfSpot?.clipsToBounds = true
+        cell.ratingView.rating = Int(spot.rating)
 
         return cell
     }
@@ -83,13 +75,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        var spot: Spot
-        
-        if isFiltering {
-            spot = filteredSpots[indexPath.row]
-        } else {
-            spot = spots[indexPath.row]
-        }
+        let spot = isFiltering ? filteredSpots[indexPath.row] : spots[indexPath.row]
         
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
             StorageManager.deleteObject(spot)
@@ -106,13 +92,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             
-            let spot: Spot
-            
-            if isFiltering {
-                spot = filteredSpots[indexPath.row]
-            } else {
-                spot = spots[indexPath.row]
-            }
+            let spot = isFiltering ? filteredSpots[indexPath.row] : spots[indexPath.row]
             
             let newSpotVC = segue.destination as! NewSpotViewController
             newSpotVC.currentSpot = spot

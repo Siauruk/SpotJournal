@@ -68,15 +68,19 @@ class NewSpotViewController: UITableViewController {
         }
     }
     
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "showMap" else { return }
+        
+        let mapVC = segue.destination as! MapViewController
+        mapVC.spot.name = spotName.text!
+        mapVC.spot.location = spotLocation.text
+        mapVC.spot.type = spotType.text
+        mapVC.spot.imageData = spotImage.image?.pngData()
+    }
+    
     func saveSpot() {
-        var image: UIImage?
-        
-        if imageIsChanged {
-            image = spotImage.image
-        } else {
-            image = #imageLiteral(resourceName: "imagePlaceholder")
-        }
-        
+        let image = imageIsChanged ? spotImage.image : #imageLiteral(resourceName: "imagePlaceholder")
         let imageData = image?.pngData()
         
         let newSpot = Spot(name: spotName.text!, location: spotLocation.text, type: spotType.text, imageData: imageData, rating: Double(ratingControl.rating))

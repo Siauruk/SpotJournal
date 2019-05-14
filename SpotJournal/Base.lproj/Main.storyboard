@@ -64,7 +64,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ocn-ZR-x1z">
-                                                    <rect key="frame" x="16" y="7.9999999999999964" width="343" height="62.666666666666657"/>
+                                                    <rect key="frame" x="16" y="8" width="343" height="62.666666666666657"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtz-Tz-ndX">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
@@ -100,7 +100,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="x0A-Ak-R62">
-                                                    <rect key="frame" x="16" y="7.9999999999999964" width="343" height="62.666666666666657"/>
+                                                    <rect key="frame" x="16" y="8" width="343" height="62.666666666666657"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WI-I7-WEi">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
@@ -136,7 +136,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mdY-8j-lnp">
-                                                    <rect key="frame" x="16" y="7.9999999999999964" width="343" height="62.666666666666657"/>
+                                                    <rect key="frame" x="16" y="8" width="343" height="62.666666666666657"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUj-Uh-J9n">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="29.666666666666668"/>
@@ -227,14 +227,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMr-pb-4Cw">
-                                <rect key="frame" x="305" y="84" width="30" height="30"/>
+                                <rect key="frame" x="295" y="84" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="XCq-MQ-rrn"/>
-                                    <constraint firstAttribute="height" constant="30" id="YU8-QD-0f7"/>
+                                    <constraint firstAttribute="width" constant="40" id="XCq-MQ-rrn"/>
+                                    <constraint firstAttribute="height" constant="40" id="YU8-QD-0f7"/>
                                 </constraints>
                                 <state key="normal" image="cancel"/>
                                 <connections>
                                     <action selector="closeVC" destination="pix-io-5QS" eventType="touchUpInside" id="vl3-lq-QoX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRJ-L8-0iJ">
+                                <rect key="frame" x="295" y="698" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="fW5-qz-sg2"/>
+                                    <constraint firstAttribute="height" constant="40" id="mda-t1-6h9"/>
+                                </constraints>
+                                <state key="normal" image="location"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="pix-io-5QS" eventType="touchUpInside" id="3fW-0o-7yA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -242,8 +253,10 @@
                         <constraints>
                             <constraint firstItem="AVA-3R-UMU" firstAttribute="trailing" secondItem="jMr-pb-4Cw" secondAttribute="trailing" constant="40" id="4Bh-H8-KCl"/>
                             <constraint firstItem="PmI-h8-GXT" firstAttribute="top" secondItem="mpC-0l-SS9" secondAttribute="top" id="F1K-38-Nx7"/>
+                            <constraint firstItem="AVA-3R-UMU" firstAttribute="trailing" secondItem="PRJ-L8-0iJ" secondAttribute="trailing" constant="40" id="GNN-gW-lRF"/>
                             <constraint firstItem="PmI-h8-GXT" firstAttribute="trailing" secondItem="AVA-3R-UMU" secondAttribute="trailing" id="IK2-sD-xz0"/>
                             <constraint firstAttribute="bottom" secondItem="PmI-h8-GXT" secondAttribute="bottom" id="N5J-GB-mjl"/>
+                            <constraint firstItem="AVA-3R-UMU" firstAttribute="bottom" secondItem="PRJ-L8-0iJ" secondAttribute="bottom" constant="40" id="Rrh-Ke-YHR"/>
                             <constraint firstItem="PmI-h8-GXT" firstAttribute="leading" secondItem="AVA-3R-UMU" secondAttribute="leading" id="STR-6x-lqO"/>
                             <constraint firstItem="jMr-pb-4Cw" firstAttribute="top" secondItem="AVA-3R-UMU" secondAttribute="top" constant="40" id="sM4-qT-uk5"/>
                         </constraints>
@@ -255,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bvt-of-flw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2913" y="108"/>
+            <point key="canvasLocation" x="2912.8000000000002" y="107.88177339901478"/>
         </scene>
         <!--Spot Journal-->
         <scene sceneID="EC4-Eu-h71">
@@ -294,7 +307,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="59" placeholderIntrinsicHeight="65.5" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8xR-1e-Aa0">
-                                                    <rect key="frame" x="95" y="9" width="182" height="65.666666666666671"/>
+                                                    <rect key="frame" x="95" y="9" width="59" height="65.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubf-af-hee">
                                                             <rect key="frame" x="0.0" y="0.0" width="47.666666666666664" height="22"/>
@@ -317,7 +330,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="55" placeholderIntrinsicHeight="11" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="des-Pf-4yC" customClass="RatingView" customModule="SpotJournal" customModuleProvider="target">
-                                                    <rect key="frame" x="285" y="35" width="75" height="15"/>
+                                                    <rect key="frame" x="162" y="37" width="198" height="11"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -425,7 +438,8 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="194.66667175292969" height="195.66667175292969"/>
-        <image name="cancel" width="128" height="128"/>
+        <image name="cancel" width="46" height="45"/>
+        <image name="location" width="50" height="51"/>
         <image name="map" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>

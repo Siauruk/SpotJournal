@@ -15,8 +15,18 @@ class MapViewController: UIViewController {
     var spot = Spot()
     let annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
+    let regionInMeters = 10_000.00
 
     @IBOutlet var mapView: MKMapView!
+    
+    
+    @IBAction func centerViewInUserLocation() {
+        
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
+    }
     
     @IBAction func closeVC() {
         dismiss(animated: true)
@@ -27,7 +37,7 @@ class MapViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
 
-        mapView.delegate = self
+            mapView.delegate = self
         setupPlacemark()
     }
     
@@ -121,6 +131,9 @@ class MapViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
 }
 
 

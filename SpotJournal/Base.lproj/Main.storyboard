@@ -325,7 +325,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YJf-Lh-HPE">
-                                <rect key="frame" x="15" y="93" width="345" height="29"/>
+                                <rect key="frame" x="15" y="145" width="345" height="29"/>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Name"/>
@@ -335,7 +335,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OMP-l1-fyf">
-                                <rect key="frame" x="0.0" y="122" width="375" height="690"/>
+                                <rect key="frame" x="0.0" y="174" width="375" height="638"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Qrw-sQ-byB" customClass="CustomTableViewCell" customModule="SpotJournal" customModuleProvider="target">
@@ -424,7 +424,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zKd-kf-dlf"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Spot Journal" largeTitleDisplayMode="never" id="cwk-Kc-11h">
+                    <navigationItem key="navigationItem" title="Spot Journal" largeTitleDisplayMode="always" id="cwk-Kc-11h">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="Y3H-Iq-8Rk">
                             <connections>
                                 <action selector="reversedSorting:" destination="hF6-Ex-Ouq" id="fTD-e1-gjz"/>
@@ -455,7 +455,7 @@
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

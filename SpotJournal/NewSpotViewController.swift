@@ -77,6 +77,7 @@ class NewSpotViewController: UITableViewController {
             else { return }
         
         mapVC.incomeSegueIdentifier = identifier
+        mapVC.mapViewControllerDelegate = self
     
         if identifier == "showSpot" {
             mapVC.spot.name = spotName.text!
@@ -181,4 +182,11 @@ extension NewSpotViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         dismiss(animated: true)
     }
+}
+
+extension NewSpotViewController: MapViewControllerDelegate {
+    func getAddress(_ address: String?) {
+        spotLocation.text = address
+    }
+
 }

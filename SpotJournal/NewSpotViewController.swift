@@ -70,13 +70,21 @@ class NewSpotViewController: UITableViewController {
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "showMap" else { return }
         
-        let mapVC = segue.destination as! MapViewController
-        mapVC.spot.name = spotName.text!
-        mapVC.spot.location = spotLocation.text
-        mapVC.spot.type = spotType.text
-        mapVC.spot.imageData = spotImage.image?.pngData()
+        guard
+            let identifier = segue.identifier,
+            let mapVC = segue.destination as? MapViewController
+            else { return }
+        
+        mapVC.incomeSegueIdentifier = identifier
+        mapVC.mapViewControllerDelegate = self
+    
+        if identifier == "showSpot" {
+            mapVC.spot.name = spotName.text!
+            mapVC.spot.location = spotLocation.text
+            mapVC.spot.type = spotType.text
+            mapVC.spot.imageData = spotImage.image?.pngData()
+        }
     }
     
     func saveSpot() {
@@ -174,4 +182,11 @@ extension NewSpotViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         dismiss(animated: true)
     }
+}
+
+extension NewSpotViewController: MapViewControllerDelegate {
+    func getAddress(_ address: String?) {
+        spotLocation.text = address
+    }
+
 }

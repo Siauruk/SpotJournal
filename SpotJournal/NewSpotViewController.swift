@@ -185,8 +185,8 @@ extension NewSpotViewController: UIImagePickerControllerDelegate, UINavigationCo
 }
 
 extension NewSpotViewController: MapViewControllerDelegate {
+    
     func getAddress(_ address: String?) {
         spotLocation.text = address
     }
-
 }

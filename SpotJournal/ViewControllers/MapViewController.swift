@@ -92,6 +92,7 @@ class MapViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+        print("deinit", MapViewController.self)
     }
 }
 

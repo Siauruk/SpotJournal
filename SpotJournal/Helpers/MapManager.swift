@@ -205,4 +205,8 @@ class MapManager {
         alertWindow.rootViewController?.present(alert, animated: true)
     }
     
+    deinit {
+        print("deinit", MapManager.self)
+    }
+    
 }

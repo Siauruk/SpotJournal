@@ -136,6 +136,9 @@ class NewSpotViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    deinit {
+        print("deinit", NewSpotViewController.self)
+    }
     
 }
 

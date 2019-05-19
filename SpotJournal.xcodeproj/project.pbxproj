@@ -15,6 +15,7 @@
 		3A15CAAF22799D82006A0843 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CAAE22799D82006A0843 /* CustomTableViewCell.swift */; };
 		3A15CAB32279A415006A0843 /* SpotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CAB22279A415006A0843 /* SpotModel.swift */; };
 		3A15CAB52279BFEB006A0843 /* NewSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CAB42279BFEB006A0843 /* NewSpotViewController.swift */; };
+		3A43F69522909EE100E82476 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A43F69422909EE100E82476 /* MapManager.swift */; };
 		3A4EB82C2288174200F58036 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EB82B2288174200F58036 /* RatingControl.swift */; };
 		3A5EA6CB227FA1D600F067D6 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5EA6CA227FA1D600F067D6 /* StorageManager.swift */; };
 		3A9124EB22888E2500134EE3 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9124EA22888E2500134EE3 /* RatingView.swift */; };
@@ -33,6 +34,7 @@
 		3A15CAAE22799D82006A0843 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3A15CAB22279A415006A0843 /* SpotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotModel.swift; sourceTree = "<group>"; };
 		3A15CAB42279BFEB006A0843 /* NewSpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSpotViewController.swift; sourceTree = "<group>"; };
+		3A43F69422909EE100E82476 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		3A4EB82B2288174200F58036 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		3A5EA6CA227FA1D600F067D6 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		3A9124EA22888E2500134EE3 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -84,21 +86,62 @@
 		3A15CA792276EA70006A0843 /* SpotJournal */ = {
 			isa = PBXGroup;
 			children = (
-				3A15CA7A2276EA70006A0843 /* AppDelegate.swift */,
-				3A5EA6CA227FA1D600F067D6 /* StorageManager.swift */,
-				3A15CAB22279A415006A0843 /* SpotModel.swift */,
+				3A43F6962290CDCB00E82476 /* ViewControllers */,
+				3A43F6982290CE2600E82476 /* Helpers */,
+				3A43F6972290CE1A00E82476 /* Models */,
+				3A43F6992290CE3B00E82476 /* Support Files */,
+				3A43F69A2290CE6E00E82476 /* IBuilder */,
+			);
+			path = SpotJournal;
+			sourceTree = "<group>";
+		};
+		3A43F6962290CDCB00E82476 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				3A15CA8C2276F46F006A0843 /* MainTableViewController.swift */,
 				3A15CAB42279BFEB006A0843 /* NewSpotViewController.swift */,
 				3A9B14292289600700A19FCA /* MapViewController.swift */,
 				3A15CAAE22799D82006A0843 /* CustomTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3A43F6972290CE1A00E82476 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A15CAB22279A415006A0843 /* SpotModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A43F6982290CE2600E82476 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A5EA6CA227FA1D600F067D6 /* StorageManager.swift */,
+				3A43F69422909EE100E82476 /* MapManager.swift */,
 				3A4EB82B2288174200F58036 /* RatingControl.swift */,
 				3A9124EA22888E2500134EE3 /* RatingView.swift */,
-				3A15CA7E2276EA70006A0843 /* Main.storyboard */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3A43F6992290CE3B00E82476 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A15CA7A2276EA70006A0843 /* AppDelegate.swift */,
 				3A15CA812276EA71006A0843 /* Assets.xcassets */,
-				3A15CA832276EA71006A0843 /* LaunchScreen.storyboard */,
 				3A15CA862276EA71006A0843 /* Info.plist */,
 			);
-			path = SpotJournal;
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		3A43F69A2290CE6E00E82476 /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				3A15CA7E2276EA70006A0843 /* Main.storyboard */,
+				3A15CA832276EA71006A0843 /* LaunchScreen.storyboard */,
+			);
+			path = IBuilder;
 			sourceTree = "<group>";
 		};
 		B68FC322A68ECA67815A866F /* Frameworks */ = {
@@ -237,6 +280,7 @@
 				3A9124EB22888E2500134EE3 /* RatingView.swift in Sources */,
 				3A9B142A2289600700A19FCA /* MapViewController.swift in Sources */,
 				3A15CAB32279A415006A0843 /* SpotModel.swift in Sources */,
+				3A43F69522909EE100E82476 /* MapManager.swift in Sources */,
 				3A5EA6CB227FA1D600F067D6 /* StorageManager.swift in Sources */,
 				3A15CA8D2276F46F006A0843 /* MainTableViewController.swift in Sources */,
 				3A15CA7B2276EA70006A0843 /* AppDelegate.swift in Sources */,
@@ -389,7 +433,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9NN94ZU74L;
-				INFOPLIST_FILE = SpotJournal/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SpotJournal/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,7 +453,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9NN94ZU74L;
-				INFOPLIST_FILE = SpotJournal/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SpotJournal/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

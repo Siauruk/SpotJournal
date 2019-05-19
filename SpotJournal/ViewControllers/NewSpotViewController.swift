@@ -136,6 +136,9 @@ class NewSpotViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    deinit {
+        print("deinit", NewSpotViewController.self)
+    }
     
 }
 
@@ -185,8 +188,8 @@ extension NewSpotViewController: UIImagePickerControllerDelegate, UINavigationCo
 }
 
 extension NewSpotViewController: MapViewControllerDelegate {
+    
     func getAddress(_ address: String?) {
         spotLocation.text = address
     }
-
 }

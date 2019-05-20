@@ -38,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
         
+        setRootViewController()
+        
         return true
     }
 
@@ -63,6 +65,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
 
+
+extension AppDelegate {
+    
+    private func setRootViewController() {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let rootViewController = Session.isCompletedWelcomeScreen ? mainStoryboard.instantiateViewController(withIdentifier: "StartNavigationController") : mainStoryboard.instantiateViewController(withIdentifier: "WelcomeViewController")
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = rootViewController
+        self.window?.makeKeyAndVisible()
+    }
+}

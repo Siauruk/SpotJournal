@@ -17,13 +17,14 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        StorageManager.addDemoObjects()
     }
     
     
     private func finishWelcomeVC() {
         performSegue(withIdentifier: "startSegue", sender: nil)
         Session.isCompletedWelcomeScreen = true
-        #warning("Implement default objects")
     }
 
 }

@@ -2,17 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Central Park New York.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Central Park New York@2x.png",
+      "filename" : "Central Park New York.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Central Park New York@3x.png",
+      "filename" : "Central Park New York-1.jpg",
       "scale" : "3x"
     }
   ],

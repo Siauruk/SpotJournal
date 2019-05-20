@@ -2,17 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Musashino Sushi Dokoro.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Musashino Sushi Dokoro@2x.png",
+      "filename" : "Musashino Sushi Dokoro.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Musashino Sushi Dokoro@3x.png",
+      "filename" : "Musashino Sushi Dokoro-1.jpg",
       "scale" : "3x"
     }
   ],

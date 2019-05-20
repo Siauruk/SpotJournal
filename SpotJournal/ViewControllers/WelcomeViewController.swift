@@ -20,10 +20,10 @@ class WelcomeViewController: UIViewController {
     }
     
     
-    //  Do we have access to contacs ? show contacts : show dog from XIB.
     private func finishWelcomeVC() {
         performSegue(withIdentifier: "startSegue", sender: nil)
         Session.isCompletedWelcomeScreen = true
+        #warning("Implement default objects")
     }
 
 }

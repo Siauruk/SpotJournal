@@ -36,9 +36,21 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //Setup the search controller
         searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
+        
+        if #available(iOS 9.1, *) {
+            searchController.obscuresBackgroundDuringPresentation = false
+        } else {
+            searchController.dimsBackgroundDuringPresentation = false
+        }
+
         searchController.searchBar.placeholder = "Search"
-        navigationItem.searchController = searchController
+        
+        if #available(iOS 11.0, *) {
+            navigationItem.searchController = searchController
+        } else {
+            tableView.tableHeaderView = searchController.searchBar
+        }
+        
         definesPresentationContext = true
     }
     

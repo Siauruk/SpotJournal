@@ -141,8 +141,16 @@ class MapManager {
     //  Request setup for route calculation
     func createDirectionsRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request? {
         guard let destinationCoordinate = spotCoordinate  else { return nil }
-        let startingLocation = MKPlacemark(coordinate: coordinate)
-        let destination = MKPlacemark(coordinate: destinationCoordinate)
+        var startingLocation: MKPlacemark
+        var destination: MKPlacemark
+        
+        if #available(iOS 10.0, *) {
+            startingLocation = MKPlacemark(coordinate: coordinate)
+            destination = MKPlacemark(coordinate: destinationCoordinate)
+        } else {
+            startingLocation = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
+            destination = MKPlacemark(coordinate: destinationCoordinate, addressDictionary: nil)
+        }
         
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: startingLocation)

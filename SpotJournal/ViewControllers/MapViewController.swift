@@ -125,12 +125,6 @@ extension MapViewController: MKMapViewDelegate {
         let center = mapManager.getCenterLocation(for: mapView)
         let geocoder = CLGeocoder()
         
-        if incomeSegueIdentifier == "showSpot" && previousLocation != nil {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.mapManager.showUserLocation(mapView: self.mapView)
-            }
-        }
-        
         geocoder.cancelGeocode()
         
         geocoder.reverseGeocodeLocation(center) { (placemarks, error) in
@@ -159,7 +153,7 @@ extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
-        renderer.strokeColor = UIColor(red: 0.0, green: 122.0 / 255.0, blue: 1.0, alpha: 1.0)
+        renderer.strokeColor = UIColor(red: 80.0 / 255.0, green: 144.0 / 255.0, blue: 230.0 / 255.0, alpha: 232.0)
         
         return renderer
     }

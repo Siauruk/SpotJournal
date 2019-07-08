@@ -131,7 +131,6 @@ class MapManager {
                 formatter.unitsStyle = .full
                 let formattedString = formatter.string(from: timeInterval)!
                 
-                
                 print("Distance to the spot: \(distance) mi.")
                 print("Estimated travel time: \(formattedString) min.")
             }

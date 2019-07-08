@@ -17,13 +17,15 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.1</string>
 	<key>CFBundleVersion</key>
-	<string>10</string>
+	<string>30</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allows access to the photo library for creating a new spot with a picture</string>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>Allows access to the camera for creating a new spot with a picture</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your current location will be displayed on the map and used for directions to your spots.</string>
 	<key>UIMainStoryboardFile</key>

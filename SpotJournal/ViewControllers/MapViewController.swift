@@ -138,9 +138,12 @@ extension MapViewController: MKMapViewDelegate {
             let placemark = placemarks.first
             let streetName = placemark?.thoroughfare
             let buildingNumber = placemark?.subThoroughfare
+            let city = placemark?.locality
             
             DispatchQueue.main.async {
-                if streetName != nil && buildingNumber != nil {
+                if streetName != nil && buildingNumber != nil && city != nil {
+                    self.addressLabel.text = "\(streetName!), \(buildingNumber!), \(city!)"
+                } else if streetName != nil && buildingNumber != nil {
                     self.addressLabel.text = "\(streetName!), \(buildingNumber!)"
                 } else if streetName != nil {
                     self.addressLabel.text = "\(streetName!)"

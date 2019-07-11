@@ -61,9 +61,7 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func goButtonPressed() {
-        mapManager.getDirections(for: mapView) { (location) in
-            self.previousLocation = location
-        }
+        mapManager.openMapForPlace(placeName: spot.name)
     }
     
     @IBAction func closeVC() {

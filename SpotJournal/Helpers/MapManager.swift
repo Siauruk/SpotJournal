@@ -14,8 +14,10 @@ class MapManager {
     let locationManager = CLLocationManager()
     
     private var spotCoordinate: CLLocationCoordinate2D?
-    private var directionsArray: [MKDirections] = []
     private let regionInMeters = 1000.00
+    
+    @available(*, deprecated, message: "This property will be removed in next version of the app")
+    private var directionsArray: [MKDirections] = []
     
     //  Spot placemark
     func setupPlacemark(spot: Spot, mapView: MKMapView) {
@@ -89,6 +91,7 @@ class MapManager {
     }
     
     //  Build a route from the user's location to the spot
+    @available(*, deprecated, message: "This method will be removed in next version of the app")
     func getDirections(for mapView: MKMapView, previousLocation: (CLLocation) -> ()) {
         guard let location = locationManager.location?.coordinate else {
             showAlert(title: "Error", message: "Current location is not found")
@@ -137,7 +140,34 @@ class MapManager {
         }
     }
     
+    //  Bulid a route from the user's location to the spot using Apple Maps
+    func openMapForPlace(placeName: String) {
+        guard let destination = createDestinationMapItem() else {
+            showAlert(title: "Error", message: "Destination is not found")
+            return
+        }
+
+        destination.name = placeName
+        destination.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+    }
+    
+    //  Create destination MKMapItem
+    func createDestinationMapItem() -> MKMapItem? {
+        guard let destinationCoordinate = spotCoordinate  else { return nil }
+        var destination: MKPlacemark
+        
+        if #available(iOS 10.0, *) {
+            destination = MKPlacemark(coordinate: destinationCoordinate)
+        } else {
+            destination = MKPlacemark(coordinate: destinationCoordinate, addressDictionary: nil)
+        }
+        
+        return MKMapItem(placemark: destination)
+    }
+    
+    
     //  Request setup for route calculation
+    @available(*, deprecated, message: "This method will be removed in next version of the app")
     func createDirectionsRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request? {
         guard let destinationCoordinate = spotCoordinate  else { return nil }
         var startingLocation: MKPlacemark
@@ -170,6 +200,7 @@ class MapManager {
     }
     
     //  Reset all previously built routes before configuring a new one
+    @available(*, deprecated, message: "This method will be removed in next version of the app")
     func resetMapView(_ mapView: MKMapView, withNew directions: MKDirections) {
         mapView.removeOverlays(mapView.overlays)
         directionsArray.append(directions)

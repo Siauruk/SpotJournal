@@ -16,8 +16,6 @@ class MapManager {
     private var spotCoordinate: CLLocationCoordinate2D?
     private let regionInMeters = 1000.00
     
-    @available(*, deprecated, message: "This property will be removed in next version of the app")
-    private var directionsArray: [MKDirections] = []
     
     //  Spot placemark
     func setupPlacemark(spot: Spot, mapView: MKMapView) {
@@ -90,56 +88,6 @@ class MapManager {
         }
     }
     
-    //  Build a route from the user's location to the spot
-    @available(*, deprecated, message: "This method will be removed in next version of the app")
-    func getDirections(for mapView: MKMapView, previousLocation: (CLLocation) -> ()) {
-        guard let location = locationManager.location?.coordinate else {
-            showAlert(title: "Error", message: "Current location is not found")
-            return
-        }
-        
-        locationManager.startUpdatingLocation()
-        previousLocation(CLLocation(latitude: location.latitude, longitude: location.longitude))
-        
-        
-        guard let request = createDirectionsRequest(from: location) else {
-            showAlert(title: "Error", message: "Destination is not found")
-            return
-        }
-        
-        let directions = MKDirections(request: request)
-        
-        resetMapView(mapView, withNew: directions)
-        
-        directions.calculate { (response, error) in
-            if let error = error {
-                print("Error - \(error)")
-                return
-            }
-            
-            guard let response = response else {
-                self.showAlert(title: "Error", message: "Direction is not available")
-                return
-            }
-            
-            for route in response.routes {
-                mapView.addOverlay(route.polyline)
-                mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
-                
-                let distance = String(format: "%.1f", route.distance / 1609,34)
-                let timeInterval = route.expectedTravelTime
-                
-                let formatter = DateComponentsFormatter()
-                formatter.allowedUnits = [.hour, .minute, .second]
-                formatter.unitsStyle = .full
-                let formattedString = formatter.string(from: timeInterval)!
-                
-                print("Distance to the spot: \(distance) mi.")
-                print("Estimated travel time: \(formattedString) min.")
-            }
-        }
-    }
-    
     //  Bulid a route from the user's location to the spot using Apple Maps
     func openMapForPlace(placeName: String) {
         guard let destination = createDestinationMapItem() else {
@@ -165,31 +113,6 @@ class MapManager {
         return MKMapItem(placemark: destination)
     }
     
-    
-    //  Request setup for route calculation
-    @available(*, deprecated, message: "This method will be removed in next version of the app")
-    func createDirectionsRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request? {
-        guard let destinationCoordinate = spotCoordinate  else { return nil }
-        var startingLocation: MKPlacemark
-        var destination: MKPlacemark
-        
-        if #available(iOS 10.0, *) {
-            startingLocation = MKPlacemark(coordinate: coordinate)
-            destination = MKPlacemark(coordinate: destinationCoordinate)
-        } else {
-            startingLocation = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
-            destination = MKPlacemark(coordinate: destinationCoordinate, addressDictionary: nil)
-        }
-        
-        let request = MKDirections.Request()
-        request.source = MKMapItem(placemark: startingLocation)
-        request.destination = MKMapItem(placemark: destination)
-        request.transportType = .automobile
-        request.requestsAlternateRoutes = true
-        
-        return request
-    }
-    
     //  Сhange the displayed area of ​​the map area in accordance with the user's movement
     func startTrackingUserLocation(for mapView: MKMapView, and location: CLLocation?, closure: (_ currentLocation: CLLocation) -> ()) {
         guard let location = location else { return }
@@ -199,15 +122,6 @@ class MapManager {
         closure(center)
     }
     
-    //  Reset all previously built routes before configuring a new one
-    @available(*, deprecated, message: "This method will be removed in next version of the app")
-    func resetMapView(_ mapView: MKMapView, withNew directions: MKDirections) {
-        mapView.removeOverlays(mapView.overlays)
-        directionsArray.append(directions)
-        directionsArray.forEach { $0.cancel() }
-        directionsArray.removeAll()
-    }
-    
     //  Get the center of the displayed map area
     func getCenterLocation(for mapView: MKMapView) -> CLLocation {
         let latitude = mapView.centerCoordinate.latitude
@@ -215,7 +129,6 @@ class MapManager {
         
         return CLLocation(latitude: latitude, longitude: longitude)
     }
-    
     
     //  Show a simple alert with two UIAlertActions
     func showAlert(title: String, message: String?) {

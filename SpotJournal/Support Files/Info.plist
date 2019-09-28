@@ -28,6 +28,8 @@
 	<string>Your current location will be displayed on the map and used for directions to your spots.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allows access to the photo library for creating a new spot with a picture</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

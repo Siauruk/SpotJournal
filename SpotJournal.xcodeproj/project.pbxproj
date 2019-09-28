@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3A15CA7B2276EA70006A0843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CA7A2276EA70006A0843 /* AppDelegate.swift */; };
 		3A15CA802276EA70006A0843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A15CA7E2276EA70006A0843 /* Main.storyboard */; };
 		3A15CA822276EA71006A0843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A15CA812276EA71006A0843 /* Assets.xcassets */; };
-		3A15CA852276EA71006A0843 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A15CA832276EA71006A0843 /* LaunchScreen.storyboard */; };
 		3A15CA8D2276F46F006A0843 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CA8C2276F46F006A0843 /* MainTableViewController.swift */; };
 		3A15CAAF22799D82006A0843 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CAAE22799D82006A0843 /* CustomTableViewCell.swift */; };
 		3A15CAB32279A415006A0843 /* SpotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15CAB22279A415006A0843 /* SpotModel.swift */; };
@@ -23,6 +22,7 @@
 		3A5EA6CB227FA1D600F067D6 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5EA6CA227FA1D600F067D6 /* StorageManager.swift */; };
 		3A9124EB22888E2500134EE3 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9124EA22888E2500134EE3 /* RatingView.swift */; };
 		3A9B142A2289600700A19FCA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B14292289600700A19FCA /* MapViewController.swift */; };
+		3ABE1F6C233FC8A3000B0B25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABE1F6B233FC8A3000B0B25 /* LaunchScreen.storyboard */; };
 		73A50AF4E8B38A3FC1A043D9 /* Pods_SpotJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876E2ABB42C9954B88E400E5 /* Pods_SpotJournal.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +31,6 @@
 		3A15CA7A2276EA70006A0843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A15CA7F2276EA70006A0843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A15CA812276EA71006A0843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3A15CA842276EA71006A0843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A15CA862276EA71006A0843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A15CA8C2276F46F006A0843 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		3A15CAAE22799D82006A0843 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		3A5EA6CA227FA1D600F067D6 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		3A9124EA22888E2500134EE3 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		3A9B14292289600700A19FCA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3ABE1F6B233FC8A3000B0B25 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		876E2ABB42C9954B88E400E5 /* Pods_SpotJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12A32043C2E5F1C6D462064 /* Pods-SpotJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotJournal.release.xcconfig"; path = "Target Support Files/Pods-SpotJournal/Pods-SpotJournal.release.xcconfig"; sourceTree = "<group>"; };
 		EDD18E2D000C1484AEC33B67 /* Pods-SpotJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotJournal.debug.xcconfig"; path = "Target Support Files/Pods-SpotJournal/Pods-SpotJournal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				3A15CA7E2276EA70006A0843 /* Main.storyboard */,
-				3A15CA832276EA71006A0843 /* LaunchScreen.storyboard */,
+				3ABE1F6B233FC8A3000B0B25 /* LaunchScreen.storyboard */,
 			);
 			path = IBuilder;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A15CA852276EA71006A0843 /* LaunchScreen.storyboard in Resources */,
+				3ABE1F6C233FC8A3000B0B25 /* LaunchScreen.storyboard in Resources */,
 				3A15CA822276EA71006A0843 /* Assets.xcassets in Resources */,
 				3A15CA802276EA70006A0843 /* Main.storyboard in Resources */,
 			);
@@ -258,18 +258,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SpotJournal/Pods-SpotJournal-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-SpotJournal/Pods-SpotJournal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-SpotJournal/Pods-SpotJournal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -308,14 +301,6 @@
 				3A15CA7F2276EA70006A0843 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3A15CA832276EA71006A0843 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A15CA842276EA71006A0843 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -442,7 +427,6 @@
 			baseConfigurationReference = EDD18E2D000C1484AEC33B67 /* Pods-SpotJournal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9NN94ZU74L;
@@ -465,7 +449,6 @@
 			baseConfigurationReference = B12A32043C2E5F1C6D462064 /* Pods-SpotJournal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9NN94ZU74L;
